@@ -95,7 +95,7 @@ header {
 }
 
 #previous-button {
-    background-color: #F2C464; /* Dark yellow */
+    background-color: #F2C464;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -104,10 +104,35 @@ header {
 }
 
 #next-button {
-    background-color: #8B0A1A; /* Dark red */
+    background-color: #8B0A1A;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+/* Login page styles */
+#auth-page {
+  text-align: center;
+  padding-top: 50px;
+}
+
+#auth-page input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+}
+
+#auth-page button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#message {
+  color: red;
 }
