@@ -1,66 +1,6 @@
 let currentPage = 1;
 let currentCourse = '';
 
-const signupBtn = document.getElementById("signup-btn");
-const loginBtn = document.getElementById("login-btn");
-const emailInput = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const message = document.getElementById("message");
-
-const authPage = document.getElementById("auth-page");
-const mainSite = document.getElementById("main-site");
-
-// Check if user is already logged in
-if (localStorage.getItem("email")) {
-  authPage.style.display = "none";
-  mainSite.style.display = "block";
-}
-
-// Signup
-signupBtn.addEventListener("click", () => {
-  fetch("/signup", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: emailInput.value, password: passwordInput.value })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.message === "Signup successful") {
-      localStorage.setItem("email", emailInput.value);
-      authPage.style.display = "none";
-      mainSite.style.display = "block";
-    } else {
-      message.textContent = data.message;
-    }
-  });
-});
-
-// Login
-loginBtn.addEventListener("click", () => {
-  fetch("/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email: emailInput.value, password: passwordInput.value })
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.message === "Login successful") {
-      localStorage.setItem("email", emailInput.value);
-      authPage.style.display = "none";
-      mainSite.style.display = "block";
-    } else {
-      message.textContent = data.message;
-    }
-  });
-});
-
-function logout() {
-  localStorage.removeItem("email");
-  authPage.style.display = "block";
-  mainSite.style.display = "none";
-}
-
-// Hogwarts course functions
 function showHome() {
     document.getElementById('course-content').style.display = 'none';
 }
