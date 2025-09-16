@@ -1,75 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hogwarts</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hogwarts</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- Authentication Page -->
-<div id="auth-page">
-  <div class="logo">
-    <span class="letter" style="color: #8B0A1A">H</span>
-    <span class="letter" style="color: #2F4F2F">O</span>
-    <span class="letter" style="color: #786C3B">G</span>
-    <span class="letter" style="color: #1A1D23">W</span>
-    <span class="letter" style="color: #8B0A1A">A</span>
-    <span class="letter" style="color: #2F4F2F">R</span>
-    <span class="letter" style="color: #786C3B">T</span>
-    <span class="letter" style="color: #1A1D23">S</span>
-    <p style="font-size: 14px; color: #666;">Login or Signup</p>
-  </div>
-
-  <input type="email" id="email" placeholder="Email">
-  <input type="password" id="password" placeholder="Password">
-  <button id="signup-btn">Sign Up</button>
-  <button id="login-btn">Log In</button>
-  <p id="message"></p>
-</div>
-
-<!-- Main Hogwarts Site -->
-<div id="main-site" style="display: none;">
-  <header>
-    <div class="logo">
-      <span class="letter" style="color: #8B0A1A">H</span>
-      <span class="letter" style="color: #2F4F2F">O</span>
-      <span class="letter" style="color: #786C3B">G</span>
-      <span class="letter" style="color: #1A1D23">W</span>
-      <span class="letter" style="color: #8B0A1A">A</span>
-      <span class="letter" style="color: #2F4F2F">R</span>
-      <span class="letter" style="color: #786C3B">T</span>
-      <span class="letter" style="color: #1A1D23">S</span>
-      <p style="font-size: 14px; color: #666;">The University Which Pays You For Reading and Passing Tests</p>
+    <header>
+        <div class="logo">
+            <span class="letter" style="color: #8B0A1A">H</span>
+            <span class="letter" style="color: #2F4F2F">O</span>
+            <span class="letter" style="color: #786C3B">G</span>
+            <span class="letter" style="color: #1A1D23">W</span>
+            <span class="letter" style="color: #8B0A1A">A</span>
+            <span class="letter" style="color: #2F4F2F">R</span>
+            <span class="letter" style="color: #786C3B">T</span>
+            <span class="letter" style="color: #1A1D23">S</span>
+            <p style="font-size: 14px; color: #666;">The University Which Pays You For Reading and Passing Tests</p>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" onclick="showHome()">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li class="courses-button"><a href="#">Courses</a>
+                    <div class="courses-dropdown">
+                        <a href="#" onclick="showCourse('story')">BA in Story</a>
+                        <a href="#" onclick="showCourse('mechanics')">BA in Mechanics</a>
+                        <a href="#" onclick="showCourse('nursery')">BA in Nursery</a>
+                    </div>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background-image" style="background-image: url('background.jpg');"></div>
+    <div id="course-content" style="display: none;">
+        <h1 id="course-title"></h1>
+        <p id="course-chapter"></p>
+        <button id="previous-button" onclick="previousPage()">Previous</button>
+        <button id="next-button" onclick="nextPage()">Next</button>
     </div>
-    <nav class="navbar">
-      <ul>
-        <li><a href="#" onclick="showHome()">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li class="courses-button"><a href="#">Courses</a>
-          <div class="courses-dropdown">
-            <a href="#" onclick="showCourse('story')">BA in Story</a>
-            <a href="#" onclick="showCourse('mechanics')">BA in Mechanics</a>
-            <a href="#" onclick="showCourse('nursery')">BA in Nursery</a>
-          </div>
-        </li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <div class="background-image" style="background-image: url('background.jpg');"></div>
-  <div id="course-content" style="display: none;">
-    <h1 id="course-title"></h1>
-    <p id="course-chapter"></p>
-    <button id="previous-button" onclick="previousPage()">Previous</button>
-    <button id="next-button" onclick="nextPage()">Next</button>
-  </div>
-
-  <button onclick="logout()" style="position: fixed; top: 10px; right: 10px;">Logout</button>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
